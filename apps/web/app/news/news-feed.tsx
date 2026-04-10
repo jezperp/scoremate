@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import type { NewsItem } from '@/lib/rss'
 import type { Transfer } from '@scoremate/types'
-import { SOURCES, isTransfer } from '@/lib/rss'
+import { SOURCES, isTransfer as _isTransfer } from '@/lib/rss'
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 

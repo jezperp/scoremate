@@ -2,6 +2,14 @@
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
     "build": {
+      "env": [
+        "API_FOOTBALL_KEY",
+        "API_FOOTBALL_HOST",
+        "VAPID_PRIVATE_KEY",
+        "VAPID_EMAIL",
+        "SUPABASE_SERVICE_ROLE_KEY",
+        "PUSH_SECRET"
+      ],
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**", "dist/**"]
     },
