@@ -103,8 +103,8 @@ export async function notifyMatchStart(
   awayTeam: string,
 ): Promise<void> {
   await sendPushToUser(userId, {
-    title: '⏱ Match börjar snart',
-    body: `${homeTeam} vs ${awayTeam} – avspark om 5 minuter`,
+    title: '⏱ Match starting soon',
+    body: `${homeTeam} vs ${awayTeam} – kick-off in 5 minutes`,
     url: `/match/${matchId}`,
   })
 }
@@ -118,7 +118,7 @@ export async function notifyGoal(
   score: string,
 ): Promise<void> {
   await sendPushToUser(userId, {
-    title: `⚽ Mål! ${scoringTeam}`,
+    title: `⚽ Goal! ${scoringTeam}`,
     body: `${homeTeam} ${score} ${awayTeam}`,
     url: `/match/${matchId}`,
   })
@@ -132,7 +132,7 @@ export async function notifyMatchEnd(
   score: string,
 ): Promise<void> {
   await sendPushToUser(userId, {
-    title: '🏁 Matchen är slut',
+    title: '🏁 Full time',
     body: `${homeTeam} ${score} ${awayTeam}`,
     url: `/match/${matchId}`,
   })

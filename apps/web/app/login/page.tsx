@@ -24,7 +24,7 @@ export default function LoginPage() {
             Score<span className="text-[#F5A623]">mate</span>
           </span>
           <p className="mt-2 text-sm text-white/50">
-            Fotbollsresultat i realtid
+            Live football scores
           </p>
         </div>
 
@@ -34,12 +34,12 @@ export default function LoginPage() {
             className="flex w-full items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10 active:scale-[0.98]"
           >
             <GoogleIcon />
-            Fortsätt med Google
+            Continue with Google
           </button>
         </div>
 
         <p className="mt-6 text-center text-xs text-white/30">
-          Genom att logga in godkänner du våra villkor och integritetspolicy.
+          By signing in you agree to our terms and privacy policy.
         </p>
       </div>
     </main>
