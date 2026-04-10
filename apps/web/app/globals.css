@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer base {
+  :root {
+    /* Scoremate dark theme (dark mode as default) */
+    --background: #0F0F11;
+    --foreground: #F5F5F5;
+    --card: #1A1A1F;
+    --card-foreground: #F5F5F5;
+    --popover: #1A1A1F;
+    --popover-foreground: #F5F5F5;
+    --primary: #F5A623;
+    --primary-foreground: #0F0F11;
+    --secondary: #2A2A30;
+    --secondary-foreground: #F5F5F5;
+    --muted: #2A2A30;
+    --muted-foreground: #888899;
+    --accent: #2A2A30;
+    --accent-foreground: #F5A623;
+    --destructive: #EF4444;
+    --destructive-foreground: #F5F5F5;
+    --border: rgba(255, 255, 255, 0.08);
+    --input: rgba(255, 255, 255, 0.1);
+    --ring: #F5A623;
+    --radius: 0.625rem;
+
+    /* Custom Scoremate tokens */
+    --color-gold: #F5A623;
+    --color-bg: #0F0F11;
+    --color-card: #1A1A1F;
+    --nav-height: 4rem;
+  }
+
+  * {
+    border-color: var(--border);
+    outline-color: var(--ring);
+  }
+
+  html {
+    font-family: var(--font-sans), sans-serif;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
