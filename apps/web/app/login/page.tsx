@@ -5,9 +5,9 @@ import { createClient } from '@scoremate/supabase/client'
 export default function LoginPage() {
   const supabase = createClient()
 
-  const signInWith = async (provider: 'google' | 'apple') => {
+  const signInWithGoogle = async () => {
     await supabase.auth.signInWithOAuth({
-      provider,
+      provider: 'google',
       options: {
         redirectTo: `${window.location.origin}/auth/callback`,
       },
@@ -29,22 +29,12 @@ export default function LoginPage() {
         </div>
 
         <div className="flex flex-col gap-3">
-          {/* Google */}
           <button
-            onClick={() => signInWith('google')}
+            onClick={signInWithGoogle}
             className="flex w-full items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10 active:scale-[0.98]"
           >
             <GoogleIcon />
             Fortsätt med Google
-          </button>
-
-          {/* Apple */}
-          <button
-            onClick={() => signInWith('apple')}
-            className="flex w-full items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10 active:scale-[0.98]"
-          >
-            <AppleIcon />
-            Fortsätt med Apple
           </button>
         </div>
 
@@ -79,10 +69,3 @@ function GoogleIcon() {
   )
 }
 
-function AppleIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 814 1000" fill="currentColor">
-      <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 790.8 0 663.3 0 541.8c0-202.1 131.9-308.8 261.4-308.8 70.8 0 129.9 46.5 173.6 46.5 41.9 0 108.2-49.1 186.2-49.1 29.8 0 108.2 2.6 168.9 80.8zm-198.4-176.3c31.2-37.1 53.5-88.8 53.5-140.5 0-7.1-.6-14.3-1.9-20.1-50.6 1.9-110.8 33.7-147.1 75.8-28.5 32.4-55.1 83.6-55.1 135.9 0 7.8 1.3 15.6 1.9 18.1 3.2.6 8.4 1.3 13.6 1.3 45.4 0 102.5-30.4 135.1-70.5z" />
-    </svg>
-  )
-}
